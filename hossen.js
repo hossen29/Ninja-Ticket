@@ -1,0 +1,29 @@
+const submit = document.getElementById("submit-btn");
+submit.addEventListener("click",function(){
+    const flying = document.getElementById("flying").value;
+    document.getElementById("flying-store").innerText = flying;
+    const flayingaTo = document.getElementById("flying-to").value;
+    document.getElementById("flying-tostore").innerText = flayingaTo;
+    const departure = document.getElementById("departure").value;
+    document.getElementById("departure-store").innerText = departure;
+    const returnKorbo = document.getElementById("return").value;
+    document.getElementById("return-store").innerText = returnKorbo;
+    const firstClass = document.getElementById("first-class").value;
+    document.getElementById("first-class-store").innerText = firstClass;
+    const economy = document.getElementById("economy-class").value;
+    document.getElementById("economy-class-store").innerText = economy;
+    const firstClassTicket = document.getElementById("first-class").value;
+    const firstClassTicketInt = parseInt(firstClassTicket);
+    const firstClassValue = firstClassTicketInt * 150;
+    const economyTicket = document.getElementById("economy-class").value;
+    const economyTicketInt = parseInt(economyTicket);
+    const economyTicketValue = economyTicketInt * 100;
+    const subTotal = firstClassValue + economyTicketValue;
+    document.getElementById("sub-total").innerText = subTotal;
+    const vat = subTotal / 100;
+    const motVat = vat * 10;
+    document.getElementById("vat-charge").innerText = motVat;
+    const total = subTotal + motVat;
+    const totalInt = parseInt(total);
+    document.getElementById("total-tk").innerText = totalInt;
+})
